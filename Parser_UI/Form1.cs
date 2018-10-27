@@ -16,11 +16,17 @@ namespace Parser_UI
         string[] xmlVal;
 
         public Form1()
-        {       
+        {
+            InitializeComponent();
             ProcessXML.LoadXML("Movies.xml",dataSet);
             PageText = ProcessParsing.LoadPage(@"https://www.kinopoisk.ru/top/");
-
-            InitializeComponent();
+            if (PageText == null)
+            {
+                buttonSearch.Enabled = false;
+                buttonSave.Enabled = false;
+                comboBoxMovies.Enabled = false;
+                textBoxName.Enabled = false;
+            }     
             dataGridViewMovies.RowCount = 1;
         }
 
@@ -72,6 +78,7 @@ namespace Parser_UI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (comboBoxMovies.Items.Count==0) return;
             DataGridViewRow row = (DataGridViewRow)dataGridViewMovies.Rows[0].Clone();
             row.Cells[0].Value = Movies[comboBoxMovies.SelectedIndex].Name;
             row.Cells[1].Value = Movies[comboBoxMovies.SelectedIndex].Year;
