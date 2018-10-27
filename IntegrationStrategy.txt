@@ -1,1 +1,17 @@
+Integration Strategy for Kinopoisk Parser project. Rev A.
+Author: Morozov Sergei.
+
+Team members (aka developers): Morozov Sergei, Habarov Artem.
+Team lead: Burukin Stanislav.
+
+This document describes the methods of integration & integration testing.
+
+1) Integration strategy: according to availability.
+2) 
+3)Integration 
+3.1) Person, responsible for integration of project: Morozov Sergei.
+3.2) Goal: try to successfully setup program on most of PCs.
+4)Integration testing
+4.1) Person, responsible for integration testing: Morozov Sergei.
+4.2) Goal: try to correct most bugs during the work of program on maximal number of PCs.
 
