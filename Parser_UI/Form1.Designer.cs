@@ -112,7 +112,7 @@
             // buttonSave
             // 
             this.buttonSave.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonSave.Location = new System.Drawing.Point(0, 353);
+            this.buttonSave.Location = new System.Drawing.Point(0, 290);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(746, 23);
             this.buttonSave.TabIndex = 4;
@@ -136,7 +136,7 @@
             this.richTextBoxInfo.Location = new System.Drawing.Point(0, 214);
             this.richTextBoxInfo.Name = "richTextBoxInfo";
             this.richTextBoxInfo.ReadOnly = true;
-            this.richTextBoxInfo.Size = new System.Drawing.Size(746, 139);
+            this.richTextBoxInfo.Size = new System.Drawing.Size(746, 76);
             this.richTextBoxInfo.TabIndex = 6;
             this.richTextBoxInfo.Text = "";
             // 
@@ -144,16 +144,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 376);
+            this.ClientSize = new System.Drawing.Size(746, 313);
             this.Controls.Add(this.richTextBoxInfo);
             this.Controls.Add(this.comboBoxMovies);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.dataGridViewMovies);
-            this.MinimumSize = new System.Drawing.Size(600, 400);
+            this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "Form1";
-            this.Text = "Moviesearch";
+            this.Text = "MovieSearch";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,12 +167,12 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.ComboBox comboBoxMovies;
-        private System.Windows.Forms.RichTextBox richTextBoxInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn MovieName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Original;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
         private System.Windows.Forms.DataGridViewTextBoxColumn Votes;
+        private System.Windows.Forms.RichTextBox richTextBoxInfo;
     }
 }
 

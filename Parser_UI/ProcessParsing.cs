@@ -11,6 +11,7 @@ namespace Parser_UI
 {
     class ProcessParsing
     {
+        private static string local = @"Top250.html";
         public static string LoadPage(string url)
         {
             try
@@ -34,9 +35,26 @@ namespace Parser_UI
                     }
                     response.Close();
                 }
+                StreamWriter streamwriter = new StreamWriter(local, false, Encoding.UTF8);
+                streamwriter.Write(result);
+                streamwriter.Close();
+
                 return result;
             }
             catch { return null; }
+        }
+
+        public static string LoadLocalHtml()
+        {
+            if (!File.Exists(local)) return null; 
+            StreamReader reader = new StreamReader(local);
+            String line = "";
+            string res = "";
+            while ((line = reader.ReadLine()) != null)
+            {
+                res += line;
+            }
+            return res;
         }
     }
 }

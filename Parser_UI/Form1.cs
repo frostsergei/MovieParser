@@ -22,11 +22,17 @@ namespace Parser_UI
             PageText = ProcessParsing.LoadPage(@"https://www.kinopoisk.ru/top/");
             if (PageText == null)
             {
-                buttonSearch.Enabled = false;
-                buttonSave.Enabled = false;
-                comboBoxMovies.Enabled = false;
-                textBoxName.Enabled = false;
-            }     
+                if (PageText == ProcessParsing.LoadLocalHtml())
+                {
+                    buttonSearch.Enabled = false;
+                    buttonSave.Enabled = false;
+                    comboBoxMovies.Enabled = false;
+                    textBoxName.Enabled = false;
+                    richTextBoxInfo.Text += "Application has no data to process!\n";
+                }
+                else richTextBoxInfo.Text += "Application works in offline mode!\n";
+            }
+            else richTextBoxInfo.Text += "Application works in online mode!\n";
             dataGridViewMovies.RowCount = 1;
         }
 
@@ -52,20 +58,26 @@ namespace Parser_UI
             {
                 comboBoxMovies.SelectedIndex = 0;
 
+                richTextBoxInfo.Text += "Found data in XML!\n";
+
                 DialogResult dialogResult = MessageBox.Show("Ok, I found something you want. Do you want to search webpage for more results?",
                     "Interesting situation!",
                     MessageBoxButtons.YesNo);
+
                 if (dialogResult == DialogResult.Yes)
                 {
                     comboBoxMovies.Items.Clear();
 
-                    string[] movies = f.SetupMovieData(key,0);
+                    string[] movies = f.SetupMovieData(key, 0);
 
-                    Movies = f.stringProcessData(movies,0);
+                    Movies = f.stringProcessData(movies, 0);
 
                     comboBoxMovies.Items.AddRange(movies);
                     comboBoxMovies.SelectedIndex = 0;
+
+                    richTextBoxInfo.Text += "Webpage data aquired!\n";
                 }
+                else richTextBoxInfo.Text += "Webpage search access canceled!\n";
             }
             else
             {
@@ -96,9 +108,14 @@ namespace Parser_UI
             }
 
             temp = temp.Replace("  "," ");
-            if(!ProcessXML.checkStrings(temp,xmlVal))
-            ProcessXML.addRow(dataSet, Movies[comboBoxMovies.SelectedIndex]);
-            ProcessXML.saveDataSetXML("Movies.xml", dataSet);
+            if (!ProcessXML.checkStrings(temp, xmlVal))
+            {
+                richTextBoxInfo.Text += "Saved data to XML!\n";
+                ProcessXML.addRow(dataSet, Movies[comboBoxMovies.SelectedIndex]);
+                ProcessXML.saveDataSetXML("Movies.xml", dataSet);
+            }
+            else richTextBoxInfo.Text += "Did not saved data to XML! Data already exists!\n";
+
         }
     }
 }
