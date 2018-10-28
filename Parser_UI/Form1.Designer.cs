@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridViewMovies = new System.Windows.Forms.DataGridView();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.comboBoxMovies = new System.Windows.Forms.ComboBox();
-            this.richTextBoxInfo = new System.Windows.Forms.RichTextBox();
             this.MovieName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Original = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Votes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.comboBoxMovies = new System.Windows.Forms.ComboBox();
+            this.richTextBoxInfo = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovies)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +59,36 @@
             this.dataGridViewMovies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewMovies.Size = new System.Drawing.Size(746, 150);
             this.dataGridViewMovies.TabIndex = 0;
+            // 
+            // MovieName
+            // 
+            this.MovieName.HeaderText = "Name";
+            this.MovieName.Name = "MovieName";
+            this.MovieName.ReadOnly = true;
+            // 
+            // Year
+            // 
+            this.Year.HeaderText = "Year";
+            this.Year.Name = "Year";
+            this.Year.ReadOnly = true;
+            // 
+            // Original
+            // 
+            this.Original.HeaderText = "Original Name";
+            this.Original.Name = "Original";
+            this.Original.ReadOnly = true;
+            // 
+            // Rating
+            // 
+            this.Rating.HeaderText = "Rating";
+            this.Rating.Name = "Rating";
+            this.Rating.ReadOnly = true;
+            // 
+            // Votes
+            // 
+            this.Votes.HeaderText = "Votes Number";
+            this.Votes.Name = "Votes";
+            this.Votes.ReadOnly = true;
             // 
             // textBoxName
             // 
@@ -93,6 +123,7 @@
             // comboBoxMovies
             // 
             this.comboBoxMovies.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxMovies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMovies.FormattingEnabled = true;
             this.comboBoxMovies.Location = new System.Drawing.Point(0, 193);
             this.comboBoxMovies.Name = "comboBoxMovies";
@@ -108,36 +139,6 @@
             this.richTextBoxInfo.Size = new System.Drawing.Size(746, 139);
             this.richTextBoxInfo.TabIndex = 6;
             this.richTextBoxInfo.Text = "";
-            // 
-            // MovieName
-            // 
-            this.MovieName.HeaderText = "Name";
-            this.MovieName.Name = "MovieName";
-            this.MovieName.ReadOnly = true;
-            // 
-            // Year
-            // 
-            this.Year.HeaderText = "Year";
-            this.Year.Name = "Year";
-            this.Year.ReadOnly = true;
-            // 
-            // Original
-            // 
-            this.Original.HeaderText = "Original Name";
-            this.Original.Name = "Original";
-            this.Original.ReadOnly = true;
-            // 
-            // Rating
-            // 
-            this.Rating.HeaderText = "Rating";
-            this.Rating.Name = "Rating";
-            this.Rating.ReadOnly = true;
-            // 
-            // Votes
-            // 
-            this.Votes.HeaderText = "Votes Number";
-            this.Votes.Name = "Votes";
-            this.Votes.ReadOnly = true;
             // 
             // Form1
             // 
