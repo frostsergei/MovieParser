@@ -34,7 +34,8 @@ namespace Parser_Libs
             PageText = LibParse.ProcesParse.LoadPage(@"https://www.kinopoisk.ru/top/");
             if (PageText == null)
             {
-                if (PageText == LibParse.ProcesParse.LoadLocalHtml())
+                PageText = LibParse.ProcesParse.LoadLocalHtml();
+                if (PageText == null)
                 {
                     buttonSearch.Enabled = false;
                     buttonSave.Enabled = false;
@@ -55,7 +56,8 @@ namespace Parser_Libs
 
             if (key == "") key = " ";
 
-            MovieInfo f = new MovieInfo(PageText);
+            //LibProcess.MovieInfo
+           LibProcess.MovieInfo f = new LibProcess.MovieInfo(PageText);
 
             string[] st = LibXml.ProcessXML.getMovieXML(key, dataSet);
             comboBoxMovies.Items.AddRange(st);

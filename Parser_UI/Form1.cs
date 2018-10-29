@@ -22,7 +22,8 @@ namespace Parser_UI
             PageText = ProcessParsing.LoadPage(@"https://www.kinopoisk.ru/top/");
             if (PageText == null)
             {
-                if (PageText == ProcessParsing.LoadLocalHtml())
+                PageText = ProcessParsing.LoadLocalHtml();
+                if (PageText == null)
                 {
                     buttonSearch.Enabled = false;
                     buttonSave.Enabled = false;
@@ -43,7 +44,7 @@ namespace Parser_UI
 
             if (key == "") key = " ";
             
-            MovieInfo f = new MovieInfo();
+            MovieInfo f = new MovieInfo(PageText);
 
             ProcessXML.getMovieXML(key, comboBoxMovies, dataSet);
 

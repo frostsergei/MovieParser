@@ -13,7 +13,7 @@ namespace Parser_UI
         private MovieData[] data;
 
         private string Page;
-        public MovieInfo() { Page = Form1.GetHTML(); data = new MovieData[0]; }
+        public MovieInfo(string str) { Page = str; data = new MovieData[0]; }
 
 
         public string[] ParseData(string filter)
