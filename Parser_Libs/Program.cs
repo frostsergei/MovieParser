@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Parser_Libs
+﻿namespace Parser_Libs
 {
+    using System;
+    using System.Windows.Forms;
+
     static class Program
     {
         /// <summary>
-        /// Главная точка входа для приложения.
+        /// Application entry point. 
         /// </summary>
         [STAThread]
         static void Main()

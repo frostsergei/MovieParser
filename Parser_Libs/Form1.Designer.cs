@@ -61,7 +61,7 @@
             this.buttonSearch.TabIndex = 8;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // textBoxName
             // 
@@ -128,7 +128,7 @@
             this.buttonSave.TabIndex = 10;
             this.buttonSave.Text = "Save ";
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // richTextBoxInfo
             // 
