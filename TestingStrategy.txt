@@ -1,0 +1,15 @@
+Testing Strategy for Kinopoisk Parser project. Rev A.
+Author: Morozov Sergei.
+
+Team members (aka developers): Morozov Sergei, Habarov Artem.
+Team lead: Burukin Stanislav.
+
+This document describes the methods of application testing.
+
+1) Functions to be tested in the first place:
+1.1) Load of webpage: program mode depends on it.
+1.2) String -> MovieData function. Data storage depends on correct structure convertion.
+2)Actions to perform after successful tests passing:
+2.1) Each developer starts application and saves data about 5-6 movies.
+2.2) Each developer tries to load 5-6 saved movies from XML.
+2.3) If 2.1 and 2.2 passed, application is considered working and is ready to be released.

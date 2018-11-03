@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibProcess", "LibProcess\Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie", "Movie\Movie.csproj", "{49CEE94B-371D-4E20-9DF9-864DBD20C70D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{D748BE94-4C2D-4A46-A617-FE0F10315EFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{49CEE94B-371D-4E20-9DF9-864DBD20C70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49CEE94B-371D-4E20-9DF9-864DBD20C70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49CEE94B-371D-4E20-9DF9-864DBD20C70D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D748BE94-4C2D-4A46-A617-FE0F10315EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D748BE94-4C2D-4A46-A617-FE0F10315EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D748BE94-4C2D-4A46-A617-FE0F10315EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D748BE94-4C2D-4A46-A617-FE0F10315EFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
