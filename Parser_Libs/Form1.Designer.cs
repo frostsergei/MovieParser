@@ -47,6 +47,7 @@
             // 
             // comboBoxMovies
             // 
+            this.comboBoxMovies.BackColor = System.Drawing.SystemColors.Window;
             this.comboBoxMovies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBoxMovies.FormattingEnabled = true;
             this.comboBoxMovies.Location = new System.Drawing.Point(342, 12);
