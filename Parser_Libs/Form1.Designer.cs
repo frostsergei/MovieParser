@@ -39,25 +39,26 @@
             this.Votes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonSave = new System.Windows.Forms.Button();
             this.richTextBoxInfo = new System.Windows.Forms.RichTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovies)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxMovies
             // 
-            this.comboBoxMovies.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxMovies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMovies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBoxMovies.FormattingEnabled = true;
-            this.comboBoxMovies.Location = new System.Drawing.Point(0, 193);
+            this.comboBoxMovies.Location = new System.Drawing.Point(342, 12);
             this.comboBoxMovies.Name = "comboBoxMovies";
-            this.comboBoxMovies.Size = new System.Drawing.Size(584, 21);
+            this.comboBoxMovies.Size = new System.Drawing.Size(390, 99);
             this.comboBoxMovies.TabIndex = 9;
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSearch.Location = new System.Drawing.Point(0, 170);
+            this.buttonSearch.Location = new System.Drawing.Point(9, 39);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(584, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(309, 23);
             this.buttonSearch.TabIndex = 8;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
@@ -65,10 +66,9 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxName.Location = new System.Drawing.Point(0, 150);
+            this.textBoxName.Location = new System.Drawing.Point(56, 13);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(584, 20);
+            this.textBoxName.Size = new System.Drawing.Size(262, 20);
             this.textBoxName.TabIndex = 7;
             // 
             // dataGridViewMovies
@@ -81,12 +81,11 @@
             this.Original,
             this.Rating,
             this.Votes});
-            this.dataGridViewMovies.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridViewMovies.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewMovies.Location = new System.Drawing.Point(12, 117);
             this.dataGridViewMovies.Name = "dataGridViewMovies";
             this.dataGridViewMovies.ReadOnly = true;
             this.dataGridViewMovies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridViewMovies.Size = new System.Drawing.Size(584, 150);
+            this.dataGridViewMovies.Size = new System.Drawing.Size(720, 280);
             this.dataGridViewMovies.TabIndex = 6;
             // 
             // MovieName
@@ -121,10 +120,9 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonSave.Location = new System.Drawing.Point(0, 238);
+            this.buttonSave.Location = new System.Drawing.Point(9, 68);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(584, 23);
+            this.buttonSave.Size = new System.Drawing.Size(309, 23);
             this.buttonSave.TabIndex = 10;
             this.buttonSave.Text = "Save ";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -132,31 +130,52 @@
             // 
             // richTextBoxInfo
             // 
-            this.richTextBoxInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxInfo.Location = new System.Drawing.Point(0, 214);
+            this.richTextBoxInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.richTextBoxInfo.Location = new System.Drawing.Point(0, 403);
             this.richTextBoxInfo.Name = "richTextBoxInfo";
             this.richTextBoxInfo.ReadOnly = true;
-            this.richTextBoxInfo.Size = new System.Drawing.Size(584, 24);
+            this.richTextBoxInfo.Size = new System.Drawing.Size(744, 128);
             this.richTextBoxInfo.TabIndex = 11;
             this.richTextBoxInfo.Text = "";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBoxName);
+            this.groupBox1.Controls.Add(this.buttonSave);
+            this.groupBox1.Controls.Add(this.buttonSearch);
+            this.groupBox1.Location = new System.Drawing.Point(12, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(324, 105);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Control";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Search:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 261);
+            this.ClientSize = new System.Drawing.Size(744, 531);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.richTextBoxInfo);
-            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.comboBoxMovies);
-            this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.dataGridViewMovies);
-            this.MinimumSize = new System.Drawing.Size(600, 300);
+            this.MinimumSize = new System.Drawing.Size(760, 570);
             this.Name = "Form1";
             this.Text = "MovieParser";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovies)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -173,6 +192,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Votes;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.RichTextBox richTextBoxInfo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
