@@ -51,7 +51,7 @@ namespace Parser_Libs
                 {
                     buttonSearch.Enabled = false;
                     buttonSave.Enabled = false;
-                    comboBoxMovies.Enabled = false;
+                    listBox1.Enabled = false;
                     textBoxName.Enabled = false;
                     richTextBoxInfo.Text += "Application has no data to process!\n";
                 }
@@ -75,7 +75,7 @@ namespace Parser_Libs
         /// <param name="e">Standart WinForms EventArgs parameter.</param>
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            comboBoxMovies.Items.Clear();
+            listBox1.Items.Clear();
             string key = textBoxName.Text;
 
             if (key == string.Empty)
@@ -86,20 +86,20 @@ namespace Parser_Libs
             LibProcess.MovieInfo f = new LibProcess.MovieInfo(pageText);
 
             string[] st = LibXml.ProcessXML.GetMovieXML(key, dataSet);
-            comboBoxMovies.Items.AddRange(st);
+            listBox1.Items.AddRange(st);
 
-            xmlVal = new string[comboBoxMovies.Items.Count];
+            xmlVal = new string[listBox1.Items.Count];
 
-            for (int i = 0; i < comboBoxMovies.Items.Count; i++)
+            for (int i = 0; i < listBox1.Items.Count; i++)
             {
-                xmlVal[i] = comboBoxMovies.Items[i].ToString();
+                xmlVal[i] = listBox1.Items[i].ToString();
             }
 
             this.movies = f.StringProcessData(xmlVal, -1);
 
-            if (comboBoxMovies.Items.Count != 0)
+            if (listBox1.Items.Count != 0)
             {
-                comboBoxMovies.SelectedIndex = 0;
+                listBox1.SelectedIndex = 0;
 
                 richTextBoxInfo.Text += "Found data in XML!\n";
 
@@ -110,14 +110,14 @@ namespace Parser_Libs
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    comboBoxMovies.Items.Clear();
+                    listBox1.Items.Clear();
 
                     string[] moviesStr = f.SetupMovieData(key, 0);
 
                     this.movies = f.StringProcessData(moviesStr, 0);
 
-                    comboBoxMovies.Items.AddRange(moviesStr);
-                    comboBoxMovies.SelectedIndex = 0;
+                    listBox1.Items.AddRange(moviesStr);
+                    listBox1.SelectedIndex = 0;
 
                     richTextBoxInfo.Text += "Webpage data aquired!\n";
                 }
@@ -130,8 +130,11 @@ namespace Parser_Libs
             {
                 string[] movies = f.SetupMovieData(key, 0);
                 this.movies = f.StringProcessData(movies, 0);
-                comboBoxMovies.Items.AddRange(movies);
-                comboBoxMovies.SelectedIndex = 0;
+
+                listBox1.Items.AddRange(movies);
+
+                if (listBox1.Items.Count != 0)
+                    listBox1.SelectedIndex = 0;
             }
         }
 
@@ -142,17 +145,16 @@ namespace Parser_Libs
         /// <param name="e">Standart WinForms EventArgs parameter.</param>
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            if (comboBoxMovies.Items.Count == 0)
+            if (listBox1.Items.Count == 0)
             {
                 return;
             }
-
             DataGridViewRow row = (DataGridViewRow)dataGridViewMovies.Rows[0].Clone();
-            row.Cells[0].Value = this.movies[comboBoxMovies.SelectedIndex].Name;
-            row.Cells[1].Value = this.movies[comboBoxMovies.SelectedIndex].Year;
-            row.Cells[2].Value = this.movies[comboBoxMovies.SelectedIndex].Origin;
-            row.Cells[3].Value = this.movies[comboBoxMovies.SelectedIndex].Rating;
-            row.Cells[4].Value = this.movies[comboBoxMovies.SelectedIndex].Votes;
+            row.Cells[0].Value = this.movies[listBox1.SelectedIndex].Name;
+            row.Cells[1].Value = this.movies[listBox1.SelectedIndex].Year;
+            row.Cells[2].Value = this.movies[listBox1.SelectedIndex].Origin;
+            row.Cells[3].Value = this.movies[listBox1.SelectedIndex].Rating;
+            row.Cells[4].Value = this.movies[listBox1.SelectedIndex].Votes;
 
             dataGridViewMovies.Rows.Add(row);
             string temp = string.Empty;
@@ -179,7 +181,7 @@ namespace Parser_Libs
             if (!ProcessXML.CheckStrings(temp, xmlVal))
             {
                 this.richTextBoxInfo.Text += "Saved data to XML!\n";
-                ProcessXML.AddRow(dataSet, this.movies[comboBoxMovies.SelectedIndex]);
+                ProcessXML.AddRow(dataSet, this.movies[listBox1.SelectedIndex]);
                 ProcessXML.SaveDataSetXML("Movies.xml", dataSet);
             }
             else

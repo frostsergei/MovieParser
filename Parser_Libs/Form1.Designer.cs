@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxMovies = new System.Windows.Forms.ComboBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.dataGridViewMovies = new System.Windows.Forms.DataGridView();
@@ -41,19 +40,10 @@
             this.richTextBoxInfo = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovies)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // comboBoxMovies
-            // 
-            this.comboBoxMovies.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBoxMovies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBoxMovies.FormattingEnabled = true;
-            this.comboBoxMovies.Location = new System.Drawing.Point(342, 12);
-            this.comboBoxMovies.Name = "comboBoxMovies";
-            this.comboBoxMovies.Size = new System.Drawing.Size(390, 99);
-            this.comboBoxMovies.TabIndex = 9;
             // 
             // buttonSearch
             // 
@@ -161,15 +151,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search:";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(342, 14);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(390, 95);
+            this.listBox1.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 531);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.richTextBoxInfo);
-            this.Controls.Add(this.comboBoxMovies);
             this.Controls.Add(this.dataGridViewMovies);
+            this.MaximumSize = new System.Drawing.Size(760, 570);
             this.MinimumSize = new System.Drawing.Size(760, 570);
             this.Name = "Form1";
             this.Text = "MovieParser";
@@ -181,8 +180,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxMovies;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.DataGridView dataGridViewMovies;
@@ -195,6 +192,7 @@
         private System.Windows.Forms.RichTextBox richTextBoxInfo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
